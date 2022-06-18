@@ -1,0 +1,135 @@
+##
+GET http://localhost:3000/api/default HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/authors HTTP/1.1
+
+
+###
+
+
+GET http://localhost:3000/api/authors/61fc2a52bbdfe1045fef66db HTTP/1.1
+
+
+###
+
+GET http://localhost:3000/api/12 HTTP/1.1
+
+
+###
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+
+}
+
+
+###
+
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"ar":"er",
+	"ew": "re"
+}
+
+###
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"name": "single name"
+}
+
+
+###
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"name": ""
+}
+
+###
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"name": "special",
+	"redundantField": "12ff323"
+}
+
+
+###
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"name": "delete me",
+	"posts": [{"foo":"fooVal", "bar": "barVal"}]
+}
+
+
+###
+
+##normal delete
+DELETE http://localhost:3000/api/authors/61fd66a88941ccc2098f3321 HTTP/1.1
+
+###
+
+DELETE http://localhost:3000/api/authors/wefewf HTTP/1.1
+
+
+###
+##deleting non existing author
+DELETE http://localhost:3000/api/authors/61fc38c7ab2c51750c2f67e5 HTTP/1.1
+
+
+###
+
+POST http://localhost:3000/api/authors HTTP/1.1
+content-type: application/json
+
+{
+	"name": "going to update me"
+}
+
+###
+
+PUT http://localhost:3000/api/authors/61fc3e2658c550df81f5585d HTTP/1.1
+content-type: application/json
+
+{
+	"name": "update me 2"
+}
+
+###
+
+##bad update request
+PUT http://localhost:3000/api/authors/61fc3e2658c550df81f5585d HTTP/1.1
+content-type: application/json
+
+{
+	"name": ""
+}
+
+###
+
+GET http://localhost:3000/api/posts HTTP/1.1
+
+
+###
+
+GET http://localhost:3000/api/posts/by-author-id/61fc2a52bbdfe1045fef66db HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/posts/by-author-id/61fc2a52bbdfe1045fef66dc HTTP/1.1

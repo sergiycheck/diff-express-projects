@@ -1,0 +1,7 @@
+
+POST http://localhost:5050/users/1 HTTP/1.1
+content-type: application/json
+
+{
+  "country": "first"
+}

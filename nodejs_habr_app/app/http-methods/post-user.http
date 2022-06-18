@@ -1,0 +1,9 @@
+POST http://localhost:5050/users/1 HTTP/1.1
+content-type: application/json
+
+{
+    "country": "first",
+    "city": "some data here",
+    "name": "name1",
+    "surname": "surname1"
+}

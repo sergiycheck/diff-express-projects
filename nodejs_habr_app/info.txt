@@ -1,0 +1,55 @@
+tutorial info
+	-	https://habr.com/ru/post/536512/
+
+helper eslint article
+	-	https://medium.com/@oxodesign/node-js-express-with-typescript-eslint-jest-prettier-and-husky-part-2-f129188ce404
+	
+last info {
+1) npm install config
+2) npm install @types/config
+3) config
+4) default.yaml PORT: 3000 
+   DEV.yaml PORT: 3001 
+   LOCAL.yaml PORT: 3002 
+5) index.ts
+   // const port = process.env.PORT;
+      const port = config.get('PORT');
+6) IDEA server:watch -- Environment
+    NODE_ENV=DEV
+    NODE_ENV=LOCAL
+
+-- packages:
+
+husky - коммиты в гит
+semantic-release - формат коммитов и контроль версий
+
+pretty-quick - запускает prettier на измененных файлах
+prettier - формат кода
+eslint-config-prettier - разрешает конфликты между eslint и prettier
+eslint-plugin-prettier - запускает prettier как правила eslint
+
+mock-socket - мок для вебсокета
+jest-websocket-mock - тестирование вебсокета
+jest-sonar-reporter - конвертр из формата jest в формат sonar
+jest-mock-extended - мок объектов и интерфейсов
+
+ws - вебсокет
+
+typescript-string-operations - String.format
+lodash - библиотека дополнительных функций для js
+http-status-codes - константы для HTTP статусов
+moment - библиотека работы со временем в js
+
+ncp - копирование файлов
+js-yaml - загрузка yaml файлов
+
+mongodb - функции для работы с Mongo
+migrate-mongo - миграция для Mongo
+
+log-timestamp - запись даты в лог
+
+axios - HTTP клиент
+
+applicationinsights - интеграция с Azure Application Insights
+
+}

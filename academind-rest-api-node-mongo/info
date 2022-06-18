@@ -1,0 +1,38 @@
+repo : https://github.com/academind/node-restful-api-tutorial/tree/03-improve-setup-error-handling
+https://www.youtube.com/watch?v=blQ60skPzl0&ab_channel=Academind
+
+mongo atlas
+https://cloud.mongodb.com/v2/61eb024e23c84c1250b97c70#clusters
+
+username: node-shop-nlwkef12fe
+password: node-shop-nlwkef12fe
+
+
+cloud db
+https://cloud.mongodb.com/v2/61eb024e23c84c1250b97c70#clusters
+
+mongoose docs
+https://mongoosejs.com/docs/api/model.html#model_Model.updateOne
+
+last finished tutorial
+https://www.youtube.com/watch?v=WDrU305J1yw&t=453s&ab_channel=Academind
+
+
+TODO: 
+Build a REST API with Node.js, TypeScript & MongoDB
+https://tomanagle.medium.com/build-a-rest-api-with-node-js-typescript-mongodb-b6c898d70d61
+
+
+https://vscode.dev/github/TomDoesTech/REST-API-Tutorial
+
+
+package for uploading files
+https://www.npmjs.com/package/multer
+
+A library to help you hash passwords.
+https://www.npmjs.com/package/bcrypt
+
+
+author totorial source code 
+https://github.com/academind/node-restful-api-tutorial/tree/11-auth-signin
+

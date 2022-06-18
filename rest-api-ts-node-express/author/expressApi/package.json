@@ -1,0 +1,34 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog",
+  "scripts": {
+    "build": "tsc",
+    "migrate-generate-set-name": "npm run build && npx typeorm migration:generate --outputJs -n",
+    "migrate-run": "npx typeorm migration:run",
+    "pre-start": "npm run build && node --unhandled-rejections=strict ./build/server.js ",
+    "start": "SET DEBUG=* && npm run pre-start "
+  },
+  "keywords": [],
+  "author": "serhii",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/debug": "^4.1.7",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.34",
+    "source-map-support": "^0.5.21",
+    "tslint": "^6.1.3",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.3.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.2.0",
+    "pg": "^8.5.1",
+    "typeorm": "^0.2.41",
+    "winston": "^3.3.3"
+  }
+}

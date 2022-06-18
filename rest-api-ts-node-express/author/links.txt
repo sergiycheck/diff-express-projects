@@ -1,0 +1,22 @@
+tutorial link
+
+https://javascript.plainenglish.io/create-a-rest-api-with-express-postgresql-typeorm-and-typescript-ac42a20b66c7
+
+
+repo link
+https://github.com/bautistaj/expressApi
+
+
+
+Building a Node.js/TypeScript REST API, Part 1: Express.js
+(logging)
+https://www.toptal.com/express-js/nodejs-typescript-rest-api-pt-1
+
+
+Connecting to Postgresql in a docker container from outside
+
+https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside
+
+
+How to debug a Node.js application in Visual Studio Code: TypeScript debugging (2/3)
+https://tsh.io/blog/visual-studio-code-typescript-debugging/

@@ -1,0 +1,91 @@
+
+##login first user
+
+POST http://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+	"email": "user1@domain.com",
+	"password": "securePassword!"
+}
+
+###
+
+GET http://localhost:3000/api/products HTTP/1.1
+
+###
+
+DELETE http://localhost:3000/api/products/6202d41cbd458d94ad08cc2b HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGRvbWFpbi5jb20iLCJ1c2VySWQiOiI2MjAyYjRhZDQyMGMxNTk4ODk3ZTQxY2QiLCJpYXQiOjE2NDQzNTMwNzcsImV4cCI6MTY0NDM1NjY3N30.6bkKR774ouBpSBzk3NUIToSyhSF81Ik3Fs5RgaRPc6c
+
+###
+GET http://localhost:3000/api/products/6202d66c60920eebbe071cc7 HTTP/1.1
+
+
+
+###
+
+GET http://localhost:3000/api/orders HTTP/1.1
+
+
+###
+
+GET http://localhost:3000/api/orders/61ec2b4a30f116f972e5aca4 HTTP/1.1
+
+
+###
+
+##first user
+
+POST http://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+	"email": "user1@domain.com",
+	"password": "securePassword!"
+}
+
+
+###
+
+##second user
+
+POST http://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+	"email": "user2@domain.com",
+	"password": "acePassword!"
+}
+
+
+###
+
+##bad email user
+
+POST http://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+	"email": "userRandomValue@",
+	"password": "acePassword!"
+}
+
+###
+
+DELETE http://localhost:3000/api/users/6202b4ad420c1598897e41cd HTTP/1.1
+
+
+###
+
+##bad login password
+
+POST http://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+	"email": "user1@domain.com",
+	"password": "notTheSamePass"
+}
+
+##
