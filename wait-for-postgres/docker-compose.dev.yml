@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  backend_app:
+    container_name: node_app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 5005:5005
+      - 9229:9229
+    volumes:
+      - ./:/home/node/app
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=development
+      - PORT=5005
+      - migrateDevArg=1
+      - PG_DB_HOST=postgress_db
+    restart: always
+    depends_on:
+      - postgress_db
+    command: sh -c './entrypoint.dev.sh'
+  postgress_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dev
+    volumes:
+      - pg_db:/var/lib/postgresql/data
+    ports:
+      - 5435:5432
+volumes:
+  pg_db:
+    driver: local

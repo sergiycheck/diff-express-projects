@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "Docker: Attach to Node",
+      "type": "node",
+      "request": "attach",
+      "remoteRoot": "/home/node/app",
+      "localRoot": "${workspaceFolder}",
+      "port": 9229
+    }
+  ]
+  // launching docker compose in debug mode not working
+  // have to attach
+}

@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  backend_app_test:
+    container_name: node_app_test
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    # specify volumes to see logs from tests
+    volumes:
+      - $PWD/logs:/home/node/app/logs
+    # loading all env from file, and overriding some of them with
+    # variables specified under enviroment
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=test
+      - PG_DB=test
+      - migrateDevArg=1
+      - PG_DB_HOST=postgress_db_test
+    restart: always
+    depends_on:
+      - postgress_db_test
+    command: sh -c './entrypoint.test.sh'
+  postgress_db_test:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: test
+    volumes:
+      - pg_db:/var/lib/postgresql/data
+    ports:
+      - 5437:5432
+volumes:
+  pg_db:
+    driver: local

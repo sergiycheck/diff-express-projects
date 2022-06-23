@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  backend_app:
+    container_name: node_app
+    build:
+      context: .
+    image: sergiycheck/node_app
+    volumes:
+      - logs_data:/home/node/app/logs
+    environment:
+      - NODE_ENV=production
+      - PORT=5002
+      - PG_DB_PORT=5432
+      - PG_DB=dev
+      - PG_DB_HOST=postgress_db
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - migrateDevArg=1
+    restart: always
+    depends_on:
+      - postgress_db
+    command: sh -c './entrypoint.sh'
+  postgress_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dev
+    volumes:
+      - pg_db:/var/lib/postgresql/data
+volumes:
+  pg_db:
+    driver: local
+  logs_data:
+    driver: local

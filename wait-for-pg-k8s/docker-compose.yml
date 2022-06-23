@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  nginx_app:
+    container_name: nginx_app
+    build:
+      context: ./nginx
+    depends_on:
+      - backend_app
+    restart: always
+    ports:
+      - 4044:4000
+  backend_app:
+    build:
+      context: .
+    image: sergiycheck/node_app
+
+    # remove ports mapping, because we access server from proxy
+    # ports:
+    # - 5002:5002
+
+    volumes:
+      - $PWD/logs:/home/node/app/logs
+    environment:
+      - NODE_ENV=production
+      - PORT=5002
+      - PG_DB_PORT=5432
+      - PG_DB=dev
+      - PG_DB_HOST=postgress_db
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - migrateDevArg=1
+    restart: always
+    depends_on:
+      - postgress_db
+    command: sh -c './entrypoint.sh'
+  postgress_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dev
+    volumes:
+      - pg_db:/var/lib/postgresql/data
+    ports:
+      - 5435:5432
+volumes:
+  pg_db:
+    driver: local

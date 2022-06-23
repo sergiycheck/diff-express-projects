@@ -1,0 +1,109 @@
+shell scripting
+{
+https://www.shellscript.sh/quickref.html
+
+echo >&2 meaning
+https://stackoverflow.com/questions/23489934/echo-2-some-text-what-does-it-mean-in-shell-scripting
+
+explanation of numbers ->1 or 3 in >&2 command
+file descriptors
+https://www.computerhope.com/jargon/f/file-descriptor.htm#:~:text=A%20file%20descriptor%20is%20a,Grants%20access.
+
+How To Bash Shell Find Out If a Variable Is Empty Or Not
+https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
+
+}
+
+docker working express app
+{
+https://github.com/docker/getting-started/tree/master/app/src
+}
+
+tutorial (build express with ts)
+https://dev.to/maithanhdanh/create-express-typescript-boilerplate-3gf
+
+Running Custom Scripts In Docker With Arguments – ENTRYPOINT Vs CMD
+https://devopscube.com/run-scripts-docker-arguments/
+
+GIT HELPFUL COMMANDS
+{
+For all unstaged files in current working directory use:
+
+git restore .
+
+Another quicker way is:
+
+git stash save --keep-index --include-untracked
+
+}
+
+TODO: know remote address with nginx & morgan after waiting for postgres ready
+{
+Fix Morgan logging with Docker and Nginx
+https://offhourscoding.com/what-is-my-ip/
+
+[optional] config winston
+https://www.digitalocean.com/community/tutorials/how-to-use-winston-to-log-node-js-applications
+
+}
+
+DOCKER official docs {
+
+###
+
+startup order
+https://docs.docker.com/compose/startup-order/
+
+postgres info {
+https://github.com/docker-library/docs/blob/master/postgres/README.md
+}
+
+it is highly discouraged to use env variables for
+production
+link
+https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/
+
+find vulnerabilities with snyk
+https://app.snyk.io/org/sergiycheck
+
+you can also configure Docker Hub to scan all newly pushed images automatically
+
+https://docs.docker.com/docker-hub/vulnerability-scanning/
+
+enable buildkit
+
+DOCKER_BUILDKIT=1 docker build .
+
+###
+
+}
+
+nano helpful {
+copy/paste in nano
+https://askubuntu.com/questions/833102/copy-only-copy-not-cutting-in-nano
+
+}
+
+working tutorial on how to debug nodejs docker container,
+but not source mapped {
+https://blog.risingstack.com/how-to-debug-a-node-js-app-in-a-docker-container/
+}
+
+docker unofficial tutorials {
+Testing with Node and Docker Compose, Part 1: On the Backend
+https://jdlm.info/articles/2019/10/19/testing-node-docker-compose-backend.html
+
+TODO Demo
+
+Testing with Node and Docker Compose, Part 1: On the Backend
+Testing with Node and Docker Compose, Part 2: On the Frontend
+Testing with Node and Docker Compose, Part 3: End-to-End
+
+https://github.com/jdleesmiller/todo-demo/tree/master
+
+}
+
+github actions info {
+
+https://github.com/docker/build-push-action
+}
