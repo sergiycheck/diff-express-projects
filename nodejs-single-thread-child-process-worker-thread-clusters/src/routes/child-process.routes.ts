@@ -1,8 +1,9 @@
-import { ChildProcessFibMsg } from './types';
+import { FibonacciNumbersReq } from '../types';
 import express from 'express';
 import { spawn, fork } from 'node:child_process';
-import { getNumFromQueryMiddleware } from './routes.middlewares';
+import { getNumFromQueryMiddleware } from '../middleware/routes.middlewares';
 import path from 'node:path';
+import { checkIfFileExists } from '../middleware/checkIfFileExists';
 
 const router = express.Router();
 
@@ -26,15 +27,18 @@ router.get('/list-directory', (req, res, next) => {
   });
 });
 
+const fibonacciChildProcessFile = './src/utils/forkedChild_fibonacciNums.ts';
 router.get(
   '/fib-with-child-process',
-  getNumFromQueryMiddleware,
+  checkIfFileExists(fibonacciChildProcessFile, 'fullPath'),
+  getNumFromQueryMiddleware('number'),
   (req, res, next) => {
     const startTime = new Date();
-    const fullPath = path.resolve(process.cwd(), './src/forkedChild.ts');
+
+    const fullPath = req['fullPath'];
 
     const childProcess = fork(fullPath);
-    const msg: ChildProcessFibMsg = { number: req['number'] };
+    const msg: FibonacciNumbersReq = { number: req['number'] };
     childProcess.send(msg);
 
     childProcess.on('message', (msg) => {

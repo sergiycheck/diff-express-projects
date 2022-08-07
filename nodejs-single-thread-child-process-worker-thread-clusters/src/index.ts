@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import { AddressInfo } from 'net';
-import createServer from './app1';
+import createServer from './app';
 import http from 'http';
 
 const port = process.env.PORT || 5002;

@@ -1,8 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import apiRoutes from './routes';
-import errorHandler from './error-handler';
-import childProcessRouters from './child-process.routes';
+import errorHandler from './middleware/error-handler';
+import apiRoutes from './routes/routes';
+import childProcessRouters from './routes/child-process.routes';
+import workerThreadsRoutes from './routes/worker-threads.routes';
 
 const createServer = async (): Promise<express.Application> => {
   const app = express();
@@ -13,10 +14,10 @@ const createServer = async (): Promise<express.Application> => {
 
   app.disable('x-powered-by');
 
-  app.use(errorHandler);
-
   app.use(apiRoutes);
   app.use(childProcessRouters);
+  app.use(workerThreadsRoutes);
+  app.use(errorHandler);
 
   return app;
 };
