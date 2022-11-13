@@ -1,9 +1,9 @@
 #!/bin/bash
 
-filesToAddIntoDist=('cron.yaml' 'index.html' 'EBSampleApp-Nodejs.iml')
+filesToAddIntoDist=('cron.yaml' 'index.html' 'EBSampleApp-Nodejs.iml' '.ebextensions')
 
 for file in ${filesToAddIntoDist[@]}; do
-  cp ./$file dist/$file
+  cp -r $file dist/$file
 done
 
-cd dist; zip ../dist.zip *.*
+cd dist; zip -r  ../dist.zip .
